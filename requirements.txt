@@ -1,9 +1,11 @@
 # ---------------------------------------------------------
-# DEPENDENCIAS DO PROJETO: JOGO DA VELHA
+# DEPENDÊNCIAS DO PROJETO: CALCULADORA SIMPLES
 # ---------------------------------------------------------
-# Este projeto utiliza exclusivamente a Biblioteca Padrao 
-# do Python (Standard Library), como: 'random' e 'os'.
+# Este projeto utiliza exclusivamente a Biblioteca Padrão 
+# do Python (Standard Library), como: 'subprocess' e 'platform'.
 #
-# Nao e necessario instalar pacotes externos via pip.
+# Não é necessário instalar pacotes externos via pip.
 # ---------------------------------------------------------
-# Para rodar o jogo: python main.py
+# Para rodar a calculadora: python main.py
+# ---------------------------------------------------------
+
