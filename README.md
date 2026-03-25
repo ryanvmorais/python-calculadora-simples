@@ -1,4 +1,4 @@
-![Calculadora Simples em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
+![Calculadora Simples em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-calculadora-simples/blob/main/assets/calculadora-simples-python-logica-promacacao.png?raw=true)
 
 # 🧮 Calculadora Simples em Python | Exercício de Lógica e Dicionários
 
