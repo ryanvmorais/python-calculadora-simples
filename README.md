@@ -1,4 +1,4 @@
-![Jogo da Velha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
+![Calculadora Simples em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
 
 # 🧮 Calculadora Simples em Python | Exercício de Lógica e Dicionários
 
@@ -62,20 +62,25 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
    ```
 > **Nota:** O jogo detectará automaticamente se você está no `Windows`, `Linux` ou `macOS` para gerenciar a limpeza da tela.
 ---
+### ▶️ Execução Simplificada (Atalhos):
+Para facilitar o acesso de quem está começando, adicionei scripts de inicialização automática. Basta baixar o projeto e:
+* **No Windows:** Dê dois cliques no arquivo `iniciar_calculadora.bat`.
+* **No Linux/macOS:** Execute o arquivo `iniciar_calculadora.sh` no terminal.
+*Esses scripts verificam automaticamente se você tem o Python instalado antes de iniciar a calculadora.*
 
+---
 ### 📋 Atividade para praticar:
 
 Para exercitar o que aprendeu, tente modificar o código e implementar estas novas funcionalidades:
 
-1. **🏆  Placar Acumulado (Gerenciamento de Estado):**
+1. 🏆 Histórico de Operações (Gerenciamento de Estado):
 
-O desafio é criar um contador que não zere ao reiniciar uma partida.
-   * **O Conceito:** Aprenda a diferenciar variáveis que controlam a **rodada** das que controlam o **histórico do jogador**.
-   * **A Lógica:** Implemente variáveis de controle (ex: `vitorias_x` e `vitorias_o`) que persistam enquanto o programa estiver aberto. Toda vez que um vencedor for detectado, o placar deve ser atualizado e exibido no próximo turno.
-   * **O Aprendizado:** Você entenderá como manter dados consistentes em aplicações que possuem múltiplos ciclos de execução.
-
-2. **🤖 Modo Single Player:** Tente fazer a máquina bloquear suas jogadas em vez de apenas jogar aleatoriamente.
-3. **🎨 Cores no Terminal:** Utilize a biblioteca `colorama` para colorir o **"X"** de vermelho e o **"O"** de azul.
+O desafio é criar um registro que armazene todos os cálculos feitos durante a sessão.
+* **O Conceito:** Aprenda a diferenciar variáveis de **valor único** de estruturas que acumulam o **histórico de dados**.
+* **A Lógica:** Implemente uma lista (ex: `historico_calculos`) que armazene cada string de resultado gerada. Crie uma nova opção no menu para exibir essa lista, permitindo que o usuário veja tudo o que foi calculado sem que os dados sumam a cada limpeza de tela.
+* **O Aprendizado:** Você entenderá como persistir informações em memória e como manipular listas para exibição posterior.
+2. **📊 Novas Funções Matemáticas:** Expanda o dicionário de operações para incluir o **Resto da Divisão (%)** e a **Raiz Quadrada (√)**. Lembre-se de tratar os casos onde o segundo valor não é necessário.
+3. **🎨 Feedback Visual:** Utilize a biblioteca `colorama` para exibir os resultados em **verde** e as mensagens de erro (como divisão por zero) em **vermelho**, melhorando a experiência do usuário.
 
 ---
 
