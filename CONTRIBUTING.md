@@ -1,23 +1,24 @@
-# 🤝 Como Contribuir no Jogo da Velha
+# 🤝 Como Contribuir na Calculadora Simples
 
-Este repositorio e um espaco para aprendizado de Python, Matrizes e Orientacao a Objetos. Sua ajuda e fundamental para tornar este material ainda melhor para a comunidade!
+Este repositório é um espaço para aprendizado de Python e Lógica Matemática. Sua ajuda é fundamental para tornar este material ainda melhor para a comunidade de desenvolvedores!
 
-## 🚀 O que voce pode fazer?
+## 🚀 O que você pode fazer?
 
-1.  **Explicacao Tecnica:** Sugira melhorias nos comentarios que explicam a logica da matriz 3x3.
-2.  **Melhoria na IA:** Consegue deixar a jogada da maquina mais inteligente para que ela tente bloquear o usuario?
-3.  **Interface:** Adicione elementos visuais ou mensagens de vitoria personalizadas no terminal.
-4.  **Documentacao:** Melhore o passo a passo do README se algo nao ficou claro.
+1.  **Refinamento de Lógica:** Sugira formas mais simples de realizar os cálculos ou validar os números.
+2.  **Novas Operações:** Implemente funções matemáticas mais complexas, como Raiz Quadrada ou Logaritmos.
+3.  **Interface:** Adicione cores ao terminal ou melhore a formatação do menu de opções.
+4.  **Documentação:** Melhore as explicações nos comentários do código para ajudar quem está começando hoje.
 
-## 🛠️ Como enviar sua sugestao
+## 🛠️ Como enviar sua sugestão
 
-1.  Faca o **Fork** do projeto para sua conta.
-2.  Crie uma branch para sua funcionalidade: `git checkout -b feature/melhoria-ia`.
-3.  Realize seus commits usando **Conventional Commits** (sem acentos).
-4.  Envie suas alteracoes: `git push origin feature/melhoria-ia`.
-5.  Abra um **Pull Request** detalhando sua mudanca.
+1.  Faça o **Fork** do projeto para sua conta pessoal.
+2.  Crie uma branch específica para sua modificação: `git checkout -b feature/nome-da-melhoria`.
+3.  Realize seus commits seguindo o padrão **Conventional Commits** (ex: `feat:`, `fix:`, `docs:`).
+4.  Envie suas alterações para o seu fork: `git push origin feature/nome-da-melhoria`.
+5.  Abra um **Pull Request** detalhando tecnicamente o que foi alterado e o impacto pedagógico da mudança.
 
 ## 📜 Diretrizes do Projeto
-- O codigo deve seguir o estilo de **Programacao Orientada a Objetos** ja estabelecido na classe `JogoDaVelha`.
-- Utilize apenas a **Biblioteca Padrao do Python**, a menos que a nova funcionalidade exija algo muito especifico (como cores).
-- O foco e sempre a **clareza para o iniciante**.
+- O código deve seguir o padrão de **Funções Modulares** e nomes autoexplicativos já estabelecido.
+- Mantenha a **coerência na nomenclatura** das variáveis (sempre em português e seguindo o padrão snake_case).
+- O foco é sempre a **didática** e a simplicidade para o iniciante, então mantenha os comentários claros e simples.
+

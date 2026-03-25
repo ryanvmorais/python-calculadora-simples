@@ -1,33 +1,29 @@
 ![Jogo da Velha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
 
-# ❌⭕ Jogo da Velha em Python | Exercício de Lógica de Programação
+# 🧮 Calculadora Simples em Python | Exercício de Lógica e Dicionários
 
-Este repositório contém um **Jogo da Velha (Tic Tac Toe)** desenvolvido em Python, projetado especificamente como um material de estudo para desenvolvedores iniciantes. O foco principal é a aplicação prática de **fundamentos da programação** e manipulação de matrizes no terminal.
+Este repositório contém uma **Calculadora Funcional** desenvolvida em Python, criada como material de estudo para quem está iniciando na programação. O foco principal é demonstrar como organizar menus interativos e **realizar operações matemáticas básicas** de forma limpa.
 
 ### 🎯 Objetivo do Projeto:
-Demonstrar a aplicação de **estruturas de repetição**, **estruturas condicionais** e **Programação Orientada a Objetos (POO)** em Python. É um projeto prático perfeito para estudantes que desejam consolidar o raciocínio lógico por trás da construção de sistemas.
+Praticar o uso de **Dicionários**, **Loops de repetição** e **Tratamento de Erros**. É o projeto ideal para entender como o Python processa entradas do usuário e entrega resultados matemáticos em tempo real.
 
 ---
 
 ### 📚 O que você vai aprender com este projeto?
 Este exercício foi estruturado para consolidar conceitos essenciais de algoritmos:
 
-*   **Estruturas de Repetição:** Controle de turnos e verificação de vitória (Loops `while` e `for`).
-*   **Estruturas Condicionais:** Validação de jogadas e regras do jogo (`if/elif/else`).
-*   **Manipulação de Matrizes:** Como gerenciar dados usando índices `[linha][coluna]`.
-*   **POO (Orientada a Objetos):** Organização de código modular, limpo e reutilizável.
-*   **Interação Multiplataforma com o SO:** Uso do módulo `subprocess` em conjunto com `os.name` para detectar o sistema operacional em tempo real e executar o comando de limpeza de tela correto (`cls` no Windows ou `clear` em sistemas Unix/Mac).
+*   **Dicionários (Mapping):** Como mapear símbolos matemáticos (`+`, `-`, `*`, `/`) para nomes legíveis.
+*   **Tratamento de Erros (Try/Except):** Como evitar que o programa feche ao tentar dividir por zero ou digitar letras.
+*   **Manipulação de Listas:** Transformar chaves de dicionários em listas para acessar opções por números (`índices`).
+*   **UX no Terminal:** Uso do módulo `subprocess` para limpar a tela e criar uma interface dinâmica.
 
 ---
 ### 🧠 Guia de Implementação: A Lógica por trás do Código
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
-1. **Abstração e Modelagem:** Imagine o tabuleiro como uma matriz 3x3. No Python, usamos uma **lista de listas** para representar isso, permitindo acessar cada quadrado através de coordenadas como `tabuleiro[0][1]`.
-2. **UX e Fluxo de Jogo:** O jogo funciona em ciclos. O usuário interage via terminal, o sistema valida a jogada e utiliza o módulo `subprocess` para limpar a tela, criando a sensação de um aplicativo dinâmico e organizado.
-3. **Arquitetura com POO:** Utilizamos **Programação Orientada a Objetos (POO)** para para organizar o código. A classe `JogoDaVelha` centraliza toda a lógica e armazena o "estado" da partida (quem venceu, de quem é a vez e como está o tabuleiro).
-4. **Inicialização:** Todo início (ou reinício) de partida limpa as variáveis de controle e gera um novo tabuleiro preenchido apenas com espaços vazios (`' '`).
-5. **Algoritmo de Vitória:** Desenvolvemos uma lógica matemática que varre as **8 possibilidades de vitória**: 3 linhas, 3 colunas e 2 diagonais. Se três símbolos iguais forem detectados em sequência, o jogo identifica o vencedor.
-6. **O "Game Loop":** O coração do projeto é um loop `while True`. Ele coordena a orquestra: `desenha o tabuleiro` -> `processa jogada do usuário` -> `verifica vitória` -> `processa jogada aleatória da máquina` -> `verifica vitória` -> `repete`.
-7. **Tratamento de Erros:**  Implementamos blocos `try/except` para que o programa não quebre caso o usuário digite algo inesperado (como letras em vez de números), garantindo uma experiência estável.
+1.  **Dicionário de Operações:** Em vez de usar vários `if`, guardamos as operações em um dicionário (`dict`). Isso permite que o programa "saiba" o nome de cada símbolo automaticamente.
+2.  **Menu Dinâmico:** O código percorre o dicionário e cria um menu numerado. Assim, se você adicionar uma nova operação no futuro, o menu se atualiza sozinho!
+3.  **Captura Segura:** Usamos o `int(input()) - 1` para converter a escolha do usuário no índice correto do Python (que sempre começa em 0).
+4.  **Blindagem (Try/Except):** O código é "blindado". Se o usuário digitar algo errado, o programa avisa o erro educadamente em vez de travar.
 
 ---
 
@@ -57,7 +53,7 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
 ### ⚙️ Como Executar o Projeto:
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/ryanvmorais/python-jogo-da-velha.git
+   git clone https://github.com/ryanvmorais/python-calculadora-simples.git
    ``` 
 2. **Execute o script:**
 - Navegue até a **pasta do projeto** e utilize o comando abaixo no seu terminal (CMD, PowerShell ou Terminal do VS Code/PyCharm):
@@ -87,7 +83,7 @@ O desafio é criar um contador que não zere ao reiniciar uma partida.
 
 Aprender algo novo tem seus desafios, mas estou aqui para caminharmos juntos! Se você encontrou algum erro, teve dificuldade em rodar o jogo ou pensou em uma funcionalidade incrível para adicionar:
 
-*   **Abra uma [Issue](https://github.com/ryanvmorais/python-jogo-da-velha/issues):** Clique no link e descreva sua dúvida ou sugestão. É a melhor forma de trocarmos conhecimento e ajudarmos outras pessoas que tenham a mesma dúvida!
+*   **Abra uma [Issue](https://github.com/ryanvmorais/python-calculadora-simples/issues):** Clique no link e descreva sua dúvida ou sugestão. É a melhor forma de trocarmos conhecimento e ajudarmos outras pessoas que tenham a mesma dúvida!
 *   **Me mande um E-mail:** Se preferir algo mais privado, pode me escrever em [**contato@ryanmorais.com.br**](mailto:contato@ryanmorais.com.br).
 
 Ficarei muito feliz em ver seu progresso e receber seu feedback para melhorar cada vez mais nossos materiais de estudo! 🤝
