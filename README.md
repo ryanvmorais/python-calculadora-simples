@@ -18,7 +18,7 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 *   **UX no Terminal:** Uso do módulo `subprocess` para limpar a tela e criar uma interface dinâmica.
 
 ---
-### 🧠 Guia de Implementação: A Lógica por trás do Código
+### 🧠 Guia de Implementação (A Lógica por trás do Código):
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
 1.  **Dicionário de Operações:** Em vez de usar vários `if`, guardamos as operações em um dicionário (`dict`). Isso permite que o programa "saiba" o nome de cada símbolo automaticamente.
 2.  **Menu Dinâmico:** O código percorre o dicionário e cria um menu numerado. Assim, se você adicionar uma nova operação no futuro, o menu se atualiza sozinho!
