@@ -1,0 +1,55 @@
+# =============================================================================
+# Configuração do projeto (PEP 621) — gerenciado com uv.
+#
+#   [project]                metadados; sem dependências de runtime (apenas
+#                             biblioteca padrão do Python)
+#   [dependency-groups] dev  lint / formatação / tipos / testes
+#   [tool.*]                 ruff, black, mypy, pytest
+#
+# As versões exatas do grafo de dependências de dev ficam fixadas no
+# uv.lock (`uv lock`); as linhas aqui são apenas pisos mínimos.
+# =============================================================================
+
+[project]
+name = "calculadora-simples"
+version = "0.1.0"
+description = "Calculadora de terminal em Python — exercício educacional de dicionários, loops e tratamento de erros."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = []
+
+# --- Ferramentas de desenvolvimento ---
+[dependency-groups]
+dev = [
+    "ruff>=0.13",
+    "black>=25.1",
+    "mypy>=1.15",
+    "pytest>=8.3",
+]
+
+[tool.uv]
+package = false  # é um script, não uma lib instalável
+
+# --- Lint (substitui flake8 + isort) ---
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+# pyflakes+pycodestyle, isort, pyupgrade, bugbear, simplify, comprehensions, ruff-native
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+
+# --- Formatador ---
+[tool.black]
+line-length = 88
+target-version = ["py312"]  # trava a checagem de segurança do black no piso de requires-python
+
+# --- Type checker ---
+[tool.mypy]
+strict = true
+files = ["main.py", "tests"]
+
+# --- Testes ---
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]  # permite `import main` sem empacotar o projeto

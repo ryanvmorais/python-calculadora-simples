@@ -3,17 +3,17 @@ title Calculadora Simples em Python
 cls
 
 echo ===========================================
-echo   VERIFICANDO AMBIENTE PYTHON...
+echo   VERIFICANDO AMBIENTE (uv)...
 echo ===========================================
 
-python --version >nul 2>&1
+uv --version >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [ERRO] Python não encontrado! 
-    echo Por favor, instale o Python em: https://python.org
+    echo [ERRO] uv nao encontrado!
+    echo Instale em: https://docs.astral.sh/uv/getting-started/installation/
     pause
     exit
 )
 
-echo [OK] Python detectado. Abrindo calculadora...
-python main.py
+echo [OK] uv detectado. Abrindo calculadora...
+uv run main.py
 pause

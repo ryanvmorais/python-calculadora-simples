@@ -7,13 +7,13 @@ echo "==========================================="
 echo "   INICIANDO CALCULADORA EM PYTHON..."
 echo "==========================================="
 
-# Verifica se o comando python3 existe
-if ! command -v python3 &> /dev/null
+# Verifica se o comando uv existe
+if ! command -v uv &> /dev/null
 then
-    echo "[ERRO] Python 3 não encontrado!"
-    echo "Por favor, instale o Python via gerenciador de pacotes."
+    echo "[ERRO] uv não encontrado!"
+    echo "Instale em: https://docs.astral.sh/uv/getting-started/installation/"
     exit
 fi
 
-echo "[OK] Python 3 detectado. Iniciando..."
-python3 main.py
+echo "[OK] uv detectado. Iniciando..."
+uv run main.py
