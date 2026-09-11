@@ -111,6 +111,18 @@ O desafio é criar um registro que armazene todos os cálculos feitos durante a 
 
 ---
 
+### 🎮 Continue praticando
+
+Este projeto faz parte de uma série de exercícios de lógica de programação em Python. Depois deste, experimente:
+
+* **[Jogo da Velha em Python](https://github.com/ryanvmorais/python-jogo-da-velha):** Matrizes e Programação Orientada a Objetos.
+* **[Jogo da Cobrinha em Python](https://github.com/ryanvmorais/python-jogo-da-cobrinha):** Listas dinâmicas e game loop com `curses`.
+* **[Pedra, Papel e Tesoura em Python](https://github.com/ryanvmorais/python-pedra-papel-tesoura):** Dicionários e POO.
+
+Veja todos os projetos e vídeos do canal em [aprenda-com-ryan-morais](https://github.com/ryanvmorais/aprenda-com-ryan-morais).
+
+---
+
 ### 💡 Ficou com alguma dúvida ou tem sugestões?
 
 Aprender algo novo tem seus desafios, mas estou aqui para caminharmos juntos! Se você encontrou algum erro, teve dificuldade em rodar o jogo ou pensou em uma funcionalidade incrível para adicionar:
