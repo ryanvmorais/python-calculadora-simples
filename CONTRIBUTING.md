@@ -21,6 +21,8 @@ Este repositório é um espaço para aprendizado de Python e Lógica Matemática
 - O código deve seguir o padrão de **Funções Modulares** e nomes autoexplicativos já estabelecido.
 - Mantenha a **coerência na nomenclatura** das variáveis (sempre em português e seguindo o padrão snake_case).
 - O foco é sempre a **didática** e a simplicidade para o iniciante, então mantenha os comentários claros e simples.
+- Toda mudança de comportamento vem acompanhada de um teste em `tests/test_main.py`.
+- Antes de abrir o PR, rode o portão de qualidade descrito em [README → 🧪 Testes e Qualidade](README.md#-testes-e-qualidade) — o CI roda exatamente os mesmos comandos.
 
 ---
 Atenciosamente,  

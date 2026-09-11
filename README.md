@@ -34,6 +34,9 @@ Para garantir a melhor experiência de aprendizado e a execução correta de tod
 | Ferramenta | Descrição | Badge |
 | :--- | :--- | :--- |
 | **Python 3** | Linguagem principal utilizada no desenvolvimento do algoritmo. | ![Linguagem Python](https://img.shields.io/badge/-Python-3776AB%3Fstyle%3Dflat%26logo%3Dpython?logo=python&logoColor=3776AB&logoSize=flat&color=F0F0F0) |
+| **uv** | Gerenciador de dependências e ambiente virtual — instala tudo com um único comando. | ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white) |
+| **ruff / black / mypy** | Lint, formatação e checagem de tipos — mantêm o código no padrão antes de cada commit. | ![Ruff](https://img.shields.io/badge/Ruff-D7FF64?style=flat&logo=ruff&logoColor=black) |
+| **pytest** | Framework de testes automatizados usado em `tests/test_main.py`. | ![Pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat&logo=pytest&logoColor=white) |
 | **Terminal** | Interface onde o jogo é executado e processa as entradas do usuário. | ![Terminal](https://img.shields.io/badge/Terminal-241F31?style=flat&logo=gnometerminal&logoColor=241F31&color=F0F0F0) |
 | **VS Code / PyCharm** | IDEs recomendadas para edição, depuração e refatoração do arquivo `main.py`. | ![PyCharm](https://img.shields.io/badge/PyCharm-pycharm?style=flat&logo=pycharm&logoColor=000000&color=F0F0F0) |
 
@@ -43,10 +46,11 @@ Para garantir a melhor experiência de aprendizado e a execução correta de tod
 
 Para garantir que o jogo funcione corretamente, certifique-se de ter os seguintes itens instalados:
 
-- **Python 3.10 ou superior:** O código utiliza recursos modernos da linguagem.
+- **Python 3.12 ou superior:** O código utiliza recursos modernos da linguagem.
+- **[uv](https://docs.astral.sh/uv/getting-started/installation/):** Gerenciador de dependências e ambiente virtual — instala e roda o projeto com um único comando.
 - **VS Code / PyCharm (Opcional):** Recomendado para abrir e editar o arquivo `main.py` com suporte total a refatoração e depuração.
 
-> **Dica:** Para verificar sua versão do Python, digite `python --version` no seu terminal.
+> **Dica:** Para verificar sua versão do Python, digite `python --version`; para conferir se o `uv` está instalado, digite `uv --version`.
 
 ---
 
@@ -56,9 +60,9 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
    git clone https://github.com/ryanvmorais/python-calculadora-simples.git
    ``` 
 2. **Execute o script:**
-- Navegue até a **pasta do projeto** e utilize o comando abaixo no seu terminal (CMD, PowerShell ou Terminal do VS Code/PyCharm):
+- Navegue até a **pasta do projeto** e utilize o comando abaixo no seu terminal (CMD, PowerShell ou Terminal do VS Code/PyCharm). O `uv` cria o ambiente virtual automaticamente na primeira execução:
    ```bash
-   python main.py
+   uv run main.py
    ```
 > **Nota:** O jogo detectará automaticamente se você está no `Windows`, `Linux` ou `macOS` para gerenciar a limpeza da tela.
 ---
@@ -67,7 +71,29 @@ Para facilitar o acesso de quem está começando, adicionei scripts de inicializ
 * **No Windows:** Dê dois cliques no arquivo `iniciar_calculadora.bat`.
 * **No Linux/macOS:** Execute o arquivo `iniciar_calculadora.sh` no terminal.
 
-*Esses scripts verificam automaticamente se você tem o Python instalado antes de iniciar a calculadora.*
+*Esses scripts verificam automaticamente se você tem o `uv` instalado antes de iniciar a calculadora.*
+
+---
+
+### 🧪 Testes e Qualidade:
+
+O projeto tem uma suíte de testes automatizados e um portão de qualidade —
+úteis tanto para garantir que suas modificações não quebram nada quanto como
+material de estudo de testes em Python.
+
+```bash
+uv sync                       # instala as dependências de desenvolvimento
+uv run ruff check --fix .     # lint
+uv run black .                # formatação
+uv run mypy main.py tests     # checagem de tipos
+uv run pytest                 # testes
+```
+
+Para entender a stack (o que cada ferramenta faz e por que foi escolhida),
+veja [`docs/stack.md`](docs/stack.md). Para o comportamento esperado do
+programa e o histórico de decisões, veja [`specs/`](specs/). Para orientações
+de arquitetura e convenções voltadas a quem edita o código, veja
+[`CLAUDE.md`](CLAUDE.md).
 
 ---
 ### 📋 Atividade para praticar:
