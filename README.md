@@ -2,6 +2,14 @@
 
 # 🧮 Calculadora Simples em Python | Exercício de Lógica e Dicionários
 
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)
+![deps](https://img.shields.io/badge/deps-uv-DE5FE9)
+[![CI](https://github.com/ryanvmorais/python-calculadora-simples/actions/workflows/ci.yml/badge.svg)](https://github.com/ryanvmorais/python-calculadora-simples/actions/workflows/ci.yml)
+![Lint](https://img.shields.io/badge/lint-ruff-261230)
+![Format](https://img.shields.io/badge/style-black-000000)
+![Types](https://img.shields.io/badge/types-mypy%20strict-2A6DB2)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Este repositório contém uma **Calculadora Funcional** desenvolvida em Python, criada como material de estudo para quem está iniciando na programação. O foco principal é demonstrar como organizar menus interativos e **realizar operações matemáticas básicas** de forma limpa.
 
 ### 🎯 Objetivo do Projeto:
