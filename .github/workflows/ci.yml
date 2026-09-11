@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Instalar uv
         uses: astral-sh/setup-uv@v5
