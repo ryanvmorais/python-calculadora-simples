@@ -1,4 +1,4 @@
-![Calculadora Simples em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-calculadora-simples/blob/main/assets/calculadora-simples-python-logica-promacacao.png?raw=true)
+![Calculadora Simples em Python - captura real do terminal calculando 42 + 8](https://github.com/ryanvmorais/python-calculadora-simples/blob/main/assets/calculadora-simples-terminal.svg?raw=true)
 
 # 🧮 Calculadora Simples em Python | Exercício de Lógica e Dicionários
 
