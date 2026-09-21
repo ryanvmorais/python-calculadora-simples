@@ -22,7 +22,7 @@ dependencies = []
 # --- Ferramentas de desenvolvimento ---
 [dependency-groups]
 dev = [
-    "ruff>=0.13",
+    "ruff>=0.16.8",
     "black>=25.1",
     "mypy>=1.15",
     "pytest>=8.3",
