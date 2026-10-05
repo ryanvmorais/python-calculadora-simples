@@ -75,7 +75,7 @@ Formatação, docstrings, type hints e comentários seguem `/estilo-arquivos`
 
 Sequência: `ruff check --fix` → `black` → `mypy` → `pytest` (skill
 `/qualidade-python`). CI (`.github/workflows/ci.yml`) roda a mesma sequência
-em Python 3.13 e 3.14 a cada push/PR. Sem hooks locais configurados.
+em Python 3.12 (o piso) e 3.14 a cada push/PR. Sem hooks locais configurados.
 
 Estratégia de teste de `calculadora()` (loop interativo): `limpar_tela` é
 sempre mockada via `monkeypatch` (evita `os.system` real); `builtins.input` é
