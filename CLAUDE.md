@@ -42,6 +42,11 @@ docs/stack.md                  # mapa da stack: o que é, por que, o que estudar
 specs/001-calculadora-simples/ # spec por engenharia reversa do comportamento atual
 iniciar_calculadora.bat        # atalho Windows (uv run main.py)
 iniciar.calculadora.sh         # atalho Linux/macOS (uv run main.py)
+.github/
+  workflows/ci.yml             # ruff -> black --check -> mypy -> pytest, em push/PR
+  dependabot.yml               # PRs semanais de atualização (uv + github-actions)
+  ISSUE_TEMPLATE/              # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
+  pull_request_template.md     # corpo padrão do PR: o quê/por quê e "Closes #N"
 ```
 
 `operacoes` é a peça central: menu e motor de cálculo leem do mesmo
