@@ -44,7 +44,7 @@ iniciar_calculadora.bat        # atalho Windows (uv run main.py)
 iniciar.calculadora.sh         # atalho Linux/macOS (uv run main.py)
 .github/
   workflows/ci.yml             # ruff -> black --check -> mypy -> pytest, em push/PR
-  dependabot.yml               # PRs semanais de atualização (uv + github-actions)
+  dependabot.yml               # PRs aos domingos, agrupados por ecossistema (uv + github-actions)
   ISSUE_TEMPLATE/              # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
   pull_request_template.md     # corpo padrão do PR: o quê/por quê e "Closes #N"
 ```
@@ -100,5 +100,5 @@ e depois `/fechar-sessao`.
 tem dependências de runtime (`dependencies = []`); só o grupo `dev`
 (ruff, black, mypy, pytest). `[tool.uv] package = false`: é um script, não
 uma biblioteca instalável — não crie `src/` nem um `[build-system]` para ele.
-Dependabot (`.github/dependabot.yml`) abre PRs semanais de atualização; revise
+Dependabot (`.github/dependabot.yml`) abre, aos domingos, um PR agrupado por ecossistema (um major vem em PR próprio); revise
 com a skill `/revisar-dependabot`.
