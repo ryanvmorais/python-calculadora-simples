@@ -41,7 +41,7 @@ do ambiente certo sem precisar ativá-lo manualmente (`uv run`).
 
 Por que esta: substitui `pip` + `venv` manuais (o que o projeto usava antes,
 via `requirements.txt`) por um fluxo único, rápido e reprodutível — o mesmo
-padrão já adotado nos outros projetos Python do Ryan (hub-ryan-morais,
+padrão já adotado nos outros projetos Python do Ryan (site-ryan-morais,
 webvigil).
 
 O que estudar:
@@ -63,7 +63,7 @@ flake8 + isort + várias outras ferramentas de uma vez).
 
 Por que esta: é o linter Python mais rápido hoje e já é o padrão nos outros
 projetos do Ryan — mesma regra (`select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]`)
-que webvigil e hub-ryan-morais usam.
+que webvigil e site-ryan-morais usam.
 
 O que estudar:
 - `uv run ruff check --fix .` — como o autofix decide o que mudar sozinho.
