@@ -12,7 +12,7 @@ origin: engenharia reversa
 
 - [x] `main.py`: menu numerado, dicionário `operacoes`, loop interativo com
   `try/except ValueError`. — RF-01, RF-02, RF-05, RF-06
-- [x] `requirements.txt`, `iniciar_calculadora.bat`, `iniciar.calculadora.sh`,
+- [x] `requirements.txt`, `iniciar_calculadora.bat`, `iniciar_calculadora.sh`,
   `README.md`, `CONTRIBUTING.md`, `LICENSE` já existentes (projeto sem
   gerenciador de dependências, sem testes, sem CI).
 
@@ -35,7 +35,7 @@ origin: engenharia reversa
   `except ZeroDivisionError`. — RF-03, RF-04, ADR-3
 - [x] `main.py`: type hints completos, docstrings no formato
   `/estilo-arquivos`, réguas de seção, `from __future__ import annotations`.
-- [x] `iniciar_calculadora.bat` / `iniciar.calculadora.sh`: trocam a checagem
+- [x] `iniciar_calculadora.bat` / `iniciar_calculadora.sh`: trocam a checagem
   de `python`/`python3` por checagem de `uv` e passam a rodar
   `uv run main.py`.
 - [x] `tests/test_main.py`: suíte cobrindo `realizar_calculo` (uma por

@@ -41,11 +41,13 @@ uv.lock                        # lockfile — commitado
 docs/stack.md                  # mapa da stack: o que é, por que, o que estudar
 specs/001-calculadora-simples/ # spec por engenharia reversa do comportamento atual
 iniciar_calculadora.bat        # atalho Windows (uv run main.py)
-iniciar.calculadora.sh         # atalho Linux/macOS (uv run main.py)
+iniciar_calculadora.sh         # atalho Linux/macOS (uv run main.py)
 .gitattributes                 # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
 CODE_OF_CONDUCT.md             # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
+SECURITY.md                    # política de segurança; relatos pelo Private Vulnerability Reporting
 .github/
   workflows/ci.yml             # ruff -> black --check -> mypy -> pytest, em push/PR; Actions fixadas por SHA
+  workflows/codeql.yml         # CodeQL (Python): push/PR na main e 1x por semana
   dependabot.yml               # PRs aos domingos, agrupados por ecossistema (uv + github-actions), cooldown de 7 dias
   ISSUE_TEMPLATE/              # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
   pull_request_template.md     # corpo padrão do PR: o quê/por quê e "Closes #N"
