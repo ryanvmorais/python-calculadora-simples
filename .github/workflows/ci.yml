@@ -1,4 +1,7 @@
 # CI — espelha o portão de qualidade local (ruff -> black -> mypy -> pytest).
+#
+# As Actions ficam fixadas pelo SHA do commit, com a versao no comentario: uma tag
+# pode ser movida depois de publicada, o SHA nao. O Dependabot atualiza os dois juntos.
 name: CI
 
 on:
@@ -17,19 +20,25 @@ jobs:
   qualidade:
     name: Qualidade (Python ${{ matrix.python-version }})
     runs-on: ubuntu-26.04
+    # Um run leva poucos minutos; o teto evita que um job travado gaste a cota.
+    timeout-minutes: 10
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.12", "3.14"]
+        # 3.12 e o piso (requires-python); 3.14 e 3.15 sao as estaveis mais novas.
+        python-version: ["3.12", "3.14", "3.15"]
 
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Instalar uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
+        with:
+          enable-cache: true
 
       - name: Instalar dependências (uv sync)
-        run: uv sync --python ${{ matrix.python-version }}
+        run: uv sync --frozen --python ${{ matrix.python-version }}
 
       - name: Lint (ruff)
         run: uv run ruff check .
@@ -38,7 +47,7 @@ jobs:
         run: uv run black --check .
 
       - name: Tipos (mypy)
-        run: uv run mypy main.py tests
+        run: uv run mypy
 
       - name: Testes (pytest)
         run: uv run pytest
