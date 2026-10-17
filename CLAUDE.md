@@ -42,9 +42,11 @@ docs/stack.md                  # mapa da stack: o que é, por que, o que estudar
 specs/001-calculadora-simples/ # spec por engenharia reversa do comportamento atual
 iniciar_calculadora.bat        # atalho Windows (uv run main.py)
 iniciar.calculadora.sh         # atalho Linux/macOS (uv run main.py)
+.gitattributes                 # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
+CODE_OF_CONDUCT.md             # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
 .github/
-  workflows/ci.yml             # ruff -> black --check -> mypy -> pytest, em push/PR
-  dependabot.yml               # PRs aos domingos, agrupados por ecossistema (uv + github-actions)
+  workflows/ci.yml             # ruff -> black --check -> mypy -> pytest, em push/PR; Actions fixadas por SHA
+  dependabot.yml               # PRs aos domingos, agrupados por ecossistema (uv + github-actions), cooldown de 7 dias
   ISSUE_TEMPLATE/              # formulário de dúvida, erro ou sugestão (+ config.yml sem issue em branco)
   pull_request_template.md     # corpo padrão do PR: o quê/por quê e "Closes #N"
 ```
@@ -75,7 +77,7 @@ Formatação, docstrings, type hints e comentários seguem `/estilo-arquivos`
 
 Sequência: `ruff check --fix` → `black` → `mypy` → `pytest` (skill
 `/qualidade-python`). CI (`.github/workflows/ci.yml`) roda a mesma sequência
-em Python 3.12 (o piso) e 3.14 a cada push/PR. Sem hooks locais configurados.
+em Python 3.12 (o piso), 3.14 e 3.15 a cada push/PR. Sem hooks locais configurados.
 
 Estratégia de teste de `calculadora()` (loop interativo): `limpar_tela` é
 sempre mockada via `monkeypatch` (evita `os.system` real); `builtins.input` é
