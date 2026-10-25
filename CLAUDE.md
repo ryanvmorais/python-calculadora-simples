@@ -45,6 +45,8 @@ iniciar_calculadora.sh         # atalho Linux/macOS (uv run main.py)
 .gitattributes                 # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
 CODE_OF_CONDUCT.md             # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
 SECURITY.md                    # política de segurança; relatos pelo Private Vulnerability Reporting
+CONTRIBUTING.md                # guia de contribuição (fork, Conventional Commits, PR)
+assets/                        # captura do terminal usada no topo do README
 .github/
   workflows/ci.yml         # ruff -> black --check -> mypy -> pytest, em push/PR; Actions fixadas por SHA
   workflows/codeql.yml     # CodeQL (Python): push/PR na main e 1x por semana
