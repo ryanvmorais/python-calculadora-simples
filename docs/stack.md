@@ -128,6 +128,87 @@ O que estudar:
 
 Docs: https://docs.pytest.org/
 
+## CI e supply chain
+
+Roda no GitHub, fora da sua máquina: confere o código a cada mudança e vigia
+as dependências. Os arquivos ficam em `.github/`.
+
+### GitHub Actions
+
+O que é/faz: serviço de automação do GitHub. O `ci.yml` roda `ruff`, `black
+--check`, `mypy` e `pytest` a cada push e PR, em Python 3.12 (o piso), 3.14 e
+3.15, para provar que o código funciona em todas as versões que o projeto diz
+suportar.
+
+Por que esta: é grátis para repositório público e já vive junto do código e
+dos PRs — não há servidor de CI separado para manter. As Actions são fixadas
+pelo SHA do commit (a versão vai no comentário), porque uma tag pode ser
+movida depois de publicada e o SHA não; o runner tem rótulo fixo
+(`ubuntu-26.04`), não `ubuntu-latest`, para a imagem não trocar sozinha.
+
+O que estudar:
+- A matriz (`strategy.matrix.python-version`) — como um job vira três.
+- `uv sync --frozen` — instala exatamente o `uv.lock`, sem recalcular.
+- Por que pinar Action por SHA em vez de por tag.
+
+Docs: https://docs.github.com/actions
+
+### CodeQL
+
+O que é/faz: analisador estático de segurança do GitHub. Lê o código Python à
+procura de padrões de vulnerabilidade (injeção, uso inseguro de `os.system`
+com entrada externa etc.) e mostra os achados na aba Security.
+
+Por que esta: roda como Action oficial, sem conta nem serviço extra. Também
+roda uma vez por semana, para as consultas novas do CodeQL valerem sem
+mudança no repositório.
+
+O que estudar:
+- A aba Security → Code scanning — onde os alertas aparecem.
+- O gatilho `schedule` (cron) do `codeql.yml`.
+- O que é um alerta de code scanning (formato SARIF) e como dispensar um falso positivo.
+
+Docs: https://codeql.github.com/docs/
+
+### pip-audit
+
+O que é/faz: confere as versões do `uv.lock` contra a base pública de
+vulnerabilidades conhecidas (CVEs). O `pip-audit.yml` roda toda segunda às
+09:00 de São Paulo e à mão (`workflow_dispatch`).
+
+Por que esta: o CI só roda em PR e o Dependabot nem sempre abre PR de
+correção, então uma CVE publicada depois do último PR passaria despercebida.
+Contra as alternativas: os Dependabot alerts só avisam e dependem do Dependabot
+funcionar; o Safety depende de uma base própria da empresa; o OSV-Scanner serviria,
+mas o `pip-audit` é mantido pela PyPA e lê direto o formato de requirements
+que o `uv export` gera. Run vermelho significa vulnerabilidade conhecida no lock; a resposta é
+atualizar as dependências.
+
+O que estudar:
+- `uv export` — como o lock vira um `requirements` para o auditor.
+- `--no-deps` — por que o auditor não pode resolver o grafo de novo.
+- O que é uma CVE/advisory e como o PyPI registra avisos de segurança.
+
+Docs: https://pypi.org/project/pip-audit/
+
+### Dependabot
+
+O que é/faz: robô do GitHub que abre PRs de atualização de dependências
+(`uv` e `github-actions`), aos domingos, agrupados por ecossistema; um major
+vem em PR próprio. Uma versão nova espera 7 dias (cooldown) antes de virar PR.
+
+Por que esta: manter ruff, black, mypy, pytest e as Actions em dia sem
+lembrar de olhar. Contra o Renovate: mais configurável, mas exige instalar
+um app à parte; o Dependabot já vem no GitHub e cobre `uv` e Actions. O cooldown evita adotar uma release recém-saída que pode
+quebrar no dia da publicação; as security updates ignoram o cooldown.
+
+O que estudar:
+- `.github/dependabot.yml` — `groups`, `cooldown` e `schedule`.
+- Como ler o PR agrupado: o que é minor/patch e por que o major vem separado.
+- `open-pull-requests-limit` — como limitar quantos PRs ficam abertos ao mesmo tempo.
+
+Docs: https://docs.github.com/code-security/dependabot
+
 ## O que deliberadamente não está na stack
 
 - **Framework de CLI (`argparse`/`click`/`typer`)** — o programa só tem um

@@ -23,11 +23,11 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 *   **Dicionários (Mapping):** Como mapear símbolos matemáticos (`+`, `-`, `*`, `/`) para nomes legíveis.
 *   **Tratamento de Erros (Try/Except):** Como evitar que o programa feche ao tentar dividir por zero ou digitar letras.
 *   **Manipulação de Listas:** Transformar chaves de dicionários em listas para acessar opções por números (`índices`).
-*   **UX no Terminal:** Uso do módulo `subprocess` para limpar a tela e criar uma interface dinâmica.
+*   **UX no Terminal:** Uso de `os.system` (módulo `os`) para limpar a tela e criar uma interface dinâmica.
 
 ---
 ### 🧠 Guia de Implementação (A Lógica por trás do Código):
-Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
+Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção desta calculadora:
 1.  **Dicionário de Operações:** Em vez de usar vários `if`, guardamos as operações em um dicionário (`dict`). Isso permite que o programa "saiba" o nome de cada símbolo automaticamente.
 2.  **Menu Dinâmico:** O código percorre o dicionário e cria um menu numerado. Assim, se você adicionar uma nova operação no futuro, o menu se atualiza sozinho!
 3.  **Captura Segura:** Usamos o `int(input()) - 1` para converter a escolha do usuário no índice correto do Python (que sempre começa em 0).
@@ -45,14 +45,14 @@ Para garantir a melhor experiência de aprendizado e a execução correta de tod
 | **uv** | Gerenciador de dependências e ambiente virtual — instala tudo com um único comando. | ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white) |
 | **ruff / black / mypy** | Lint, formatação e checagem de tipos — mantêm o código no padrão antes de cada commit. | ![Ruff](https://img.shields.io/badge/Ruff-D7FF64?style=flat&logo=ruff&logoColor=black) |
 | **pytest** | Framework de testes automatizados usado em `tests/test_main.py`. | ![Pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat&logo=pytest&logoColor=white) |
-| **Terminal** | Interface onde o jogo é executado e processa as entradas do usuário. | ![Terminal](https://img.shields.io/badge/Terminal-241F31?style=flat&logo=gnometerminal&logoColor=241F31&color=F0F0F0) |
+| **Terminal** | Interface onde o programa é executado e processa as entradas do usuário. | ![Terminal](https://img.shields.io/badge/Terminal-241F31?style=flat&logo=gnometerminal&logoColor=241F31&color=F0F0F0) |
 | **VS Code / PyCharm** | IDEs recomendadas para edição, depuração e refatoração do arquivo `main.py`. | ![PyCharm](https://img.shields.io/badge/PyCharm-pycharm?style=flat&logo=pycharm&logoColor=000000&color=F0F0F0) |
 
 ---
 
 ### ✅ Requisitos Mínimos:
 
-Para garantir que o jogo funcione corretamente, certifique-se de ter os seguintes itens instalados:
+Para garantir que o programa funcione corretamente, certifique-se de ter os seguintes itens instalados:
 
 - **Python 3.12 ou superior:** O código utiliza recursos modernos da linguagem.
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/):** Gerenciador de dependências e ambiente virtual — instala e roda o projeto com um único comando.
@@ -72,7 +72,7 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
    ```bash
    uv run main.py
    ```
-> **Nota:** O jogo detectará automaticamente se você está no `Windows`, `Linux` ou `macOS` para gerenciar a limpeza da tela.
+> **Nota:** O programa detectará automaticamente se você está no `Windows`, `Linux` ou `macOS` para gerenciar a limpeza da tela.
 ---
 ### ▶️ Execução Simplificada (Atalhos):
 Para facilitar o acesso de quem está começando, adicionei scripts de inicialização automática. Basta baixar o projeto e:
