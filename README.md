@@ -44,11 +44,11 @@ Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem 
 
 Para garantir a melhor experiência de aprendizado, o projeto utiliza as seguintes tecnologias:
 
-| Ferramenta | Descrição | Badge |
-| :--- | :--- | :--- |
-| **Python 3.12+** | Linguagem principal do projeto. O programa usa só a biblioteca padrão, sem dependências externas. | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) |
-| **uv** | Gerenciador de dependências e ambientes virtuais: cria o ambiente e roda o projeto com um único comando. | ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white) |
-| **Terminal** | Interface onde o programa roda e recebe as entradas do usuário (CMD, PowerShell ou o terminal do VS Code/PyCharm). | ![Terminal](https://img.shields.io/badge/Terminal-241F31?style=flat&logo=gnometerminal&logoColor=white) |
+| Ferramenta | Descrição |
+| :--- | :--- |
+| **Python 3.12+** | Linguagem principal do projeto. O programa usa só a biblioteca padrão, sem dependências externas. |
+| **uv** | Gerenciador de dependências e ambientes virtuais: cria o ambiente e roda o projeto com um único comando. |
+| **Terminal** | Interface onde o programa roda e recebe as entradas do usuário (CMD, PowerShell ou o terminal do VS Code/PyCharm). |
 
 As ferramentas de qualidade (Ruff, Black, Mypy e Pytest) estão em [Qualidade e testes](#qualidade-e-testes). Para o porquê de cada escolha, veja [docs/stack.md](docs/stack.md).
 
